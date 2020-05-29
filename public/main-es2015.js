@@ -1350,6 +1350,7 @@ let SignupComponent = class SignupComponent {
         this.authService.createOrUpdate(this.credentials).subscribe((result) => {
             return result;
         });
+        this.router.navigate(['/']);
     }
 };
 SignupComponent.ctorParameters = () => [
@@ -1638,7 +1639,7 @@ __webpack_require__.r(__webpack_exports__);
 let AuthService = class AuthService {
     constructor(http) {
         this.http = http;
-        this.url = 'http://localhost:3000/api';
+        this.url = 'https://blog-application-mb30738.herokuapp.com/api';
     }
     authenticate(credentials) {
         return this.http.post(this.url + '/user/auth', {
@@ -1710,7 +1711,7 @@ __webpack_require__.r(__webpack_exports__);
 let DataService = class DataService {
     constructor(http) {
         this.http = http;
-        this.url = 'http://localhost:3000';
+        this.url = 'https://blog-application-mb30738.herokuapp.com';
     }
     getAll() {
         return this.http.get(this.url + '/api/posts/');
